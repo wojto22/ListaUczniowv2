@@ -1,0 +1,19 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaUczniow.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Class:" />
+        <Entry x:Name="ClassEntry" Placeholder="Wpisz nazwe klasy" />
+
+        <Button Text="Dodaj klase" Clicked="AddClassButton_Clicked" />
+        <Button Text="Usun klase" Clicked="RemoveClassButton_Clicked" />
+
+        <Picker x:Name="ClassPicker" Title="Wybierz klase" SelectedIndexChanged="ClassPicker_SelectedIndexChanged" />
+
+
+
+        <Label x:Name="ResultLabel" IsVisible="False" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,28 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListaUczniow.StudentsPage">
+
+    <StackLayout Padding="20">
+        <Label Text="{Binding ClassName}" />
+        <Entry Placeholder="Wpisz imie ucznia" x:Name="StudentEntry" />
+        <Button Text="Dodaj ucznia" Clicked="AddStudentButton_Clicked" />
+        <Button Text="Wybierz ucznia do odpowiedzi" Clicked="RandomStudentButton_Clicked" />
+        <ListView x:Name="StudentList" ItemSelected="StudentList_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Id}" HorizontalOptions="Start" />
+                            <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" />
+                            <Button Text="Edytuj" Clicked="EditStudentButton_Clicked" CommandParameter="{Binding .}" />
+                            <Button Text="Remove" Clicked="RemoveStudentButton_Clicked" CommandParameter="{Binding .}" />
+                        </StackLayout>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿^shell {
+    -maui-shell-background: darkcyan;
+    -maui-shell-title: lightcyan;
+    text-align: center;
+}
+
+* {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+}
