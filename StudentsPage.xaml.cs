@@ -51,7 +51,7 @@ namespace ListaUczniow
             }
             catch (Exception ex)
             {
-                Console.WriteLine("B³¹d wczytywania uczniów z pliku: " + ex.Message);
+                Console.WriteLine("BÂ³Â¹d wczytywania uczniÃ³w z pliku: " + ex.Message);
             }
         }
 
@@ -108,9 +108,9 @@ namespace ListaUczniow
 
                     using (StreamWriter writer = new StreamWriter(classFilePath))
                     {
-                        writer.WriteLine(classEntry.Key); // Zapisz nazwê klasy
+                        writer.WriteLine(classEntry.Key); 
 
-                        // Zapisz uczniów dla danej klasy
+                        
                         foreach (var student in classEntry.Value)
                         {
                             writer.WriteLine($"{student.Id},{student.Name}");
@@ -120,7 +120,7 @@ namespace ListaUczniow
             }
             catch (Exception ex)
             {
-                Console.WriteLine("B³¹d zapisu uczniów: " + ex.Message);
+                Console.WriteLine("BÂ³Â¹d zapisu uczniÃ³w: " + ex.Message);
             }
         }
 
@@ -132,7 +132,7 @@ namespace ListaUczniow
                 return;
 
             var selectedStudent = e.SelectedItem as Student;
-            DisplayAlert("Wybranie ucznia", $"Wybra³es: {selectedStudent.Name}", "OK");
+            DisplayAlert("Wybranie ucznia", $"WybraÂ³es: {selectedStudent.Name}", "OK");
             (sender as ListView).SelectedItem = null;
         }
 
@@ -147,13 +147,13 @@ namespace ListaUczniow
                 {
                     var randomIndex = random.Next(0, availableStudents.Count);
                     var randomStudent = availableStudents[randomIndex];
-                    DisplayAlert("Odpowiedz", $"Uczeñ wybrany do odpowiedzi: {randomStudent.Name} (Numer: {randomStudent.Id})", "OK");
+                    DisplayAlert("Odpowiedz", $"UczeÃ± wybrany do odpowiedzi: {randomStudent.Name} (Numer: {randomStudent.Id})", "OK");
                 }
 
             }
             else
             {
-                DisplayAlert("Nie ma uczniów", "Nie ma uczniów w klasie.", "OK");
+                DisplayAlert("Nie ma uczniÃ³w", "Nie ma uczniÃ³w w klasie.", "OK");
             }
         }
         private async void EditStudentButton_Clicked(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace ListaUczniow
             var student = (sender as Button)?.BindingContext as Student;
             if (student != null)
             {
-                var newName = await DisplayPromptAsync("Edycja ucznia", "WprowadŸ nowe imiê ucznia:", "Zapisz", "Anuluj", student.Name);
+                var newName = await DisplayPromptAsync("Edycja ucznia", "WprowadÅ¸ nowe imiÃª ucznia:", "Zapisz", "Anuluj", student.Name);
                 if (newName != null)
                 {
                     student.Name = newName;
