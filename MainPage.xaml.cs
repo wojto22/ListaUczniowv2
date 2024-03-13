@@ -7,7 +7,7 @@ namespace ListaUczniow
 {
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<string> classNames = new ObservableCollection<string>(); // Kolekcja przechowująca nazwy klas
+        private ObservableCollection<string> classNames = new ObservableCollection<string>(); 
         private Dictionary<string, List<Student>> studentsByClass = new Dictionary<string, List<Student>>();
         private string filePath;
 
@@ -19,7 +19,7 @@ namespace ListaUczniow
 
             LoadClassesAndStudents();
 
-            // Przypisanie źródła danych do listy wyboru klas
+            
             ClassPicker.ItemsSource = classNames;
         }
 
@@ -37,7 +37,7 @@ namespace ListaUczniow
             if (!string.IsNullOrWhiteSpace(className) && !studentsByClass.ContainsKey(className))
             {
                 studentsByClass.Add(className, new List<Student>());
-                classNames.Add(className); // Dodanie klasy do kolekcji
+                classNames.Add(className); 
 
                 SaveClassesAndStudents();
             }
@@ -52,7 +52,7 @@ namespace ListaUczniow
             if (!string.IsNullOrWhiteSpace(className) && studentsByClass.ContainsKey(className))
             {
                 studentsByClass.Remove(className);
-                classNames.Remove(className); // Usunięcie klasy z kolekcji
+                classNames.Remove(className); 
 
                 SaveClassesAndStudents();
             }
