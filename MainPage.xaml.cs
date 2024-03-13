@@ -109,7 +109,7 @@ namespace ListaUczniow
                                     }
                                 }
                                 studentsByClass.Add(className, students);
-                                classNames.Add(className); // Dodanie klasy do kolekcji
+                                classNames.Add(className); 
                             }
                         }
                     }
